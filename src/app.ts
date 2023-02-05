@@ -1,1 +1,15 @@
-console.log('ts-node is started');
+import { createServer } from 'node:http';
+import { createApp, eventHandler, toNodeListener, createRouter } from 'h3';
+const app = createApp();
+const port = process.env.PORT || 3000;
+const router = createRouter();
+router.get(
+  '/',
+  eventHandler(() => {
+    return 'hello world';
+  }),
+);
+app.use(router);
+createServer(toNodeListener(app)).listen(port, undefined, () => {
+  console.log(`server is runing at http://127.0.0.1:${port}/`);
+});
