@@ -12,7 +12,7 @@
     "noUnusedLocals": true, // 检查只声明、未使用的局部变量(只提示不报错)
     "strictNullChecks": true, // 不允许把null、undefined赋值给其他类型的变量
     "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "src/**/*.ts",
@@ -21,5 +21,5 @@
   "exclude": [
     "node_modules",
     "dist"
-  ],
+  ]
 }
